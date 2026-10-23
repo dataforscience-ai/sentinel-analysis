@@ -1,0 +1,511 @@
+========================================================================
+transactions / holdout  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+customer_id                       str       null=  0.0% uniq=  2669
+merchant_id                       str       null=  0.0% uniq=  1372
+device_id                         str       null=  0.3% uniq=  2665
+amount_paise                      int64     null=  0.0% uniq=  4962 | min=2321 max=5.3211e+08 mean=4.771e+05
+transaction_amount                float64   null=  0.0% uniq=  4962 | min=23.21 max=5.3211e+06 mean=4771
+payment_channel                   str       null=  0.0% uniq=     4 | UPI:2901, card:1552, wallet:304, net_banking:243
+merchant_category                 str       null=  0.0% uniq=    10 | grocery:881, electronics:729, quick_commerce:685, gaming:626, food:604, gift_cards:375, travel:307, healthcare:300
+transaction_time                  str       null=  0.0% uniq=  5000
+customer_age                      int64     null=  0.0% uniq=    63 | min=18 max=80 mean=50.09
+customer_location                 str       null=  3.0% uniq=    16
+merchant_location                 str       null=  0.0% uniq=    16
+account_age                       int64     null=  0.0% uniq=  1232 | min=0 max=2193 mean=923.2
+previous_transactions             int64     null=  0.0% uniq=    26 | min=0 max=25 mean=4.133
+average_transaction_value         float64   null=  0.6% uniq=  4943 | min=44.97 max=866809 mean=4514
+failed_transactions               int64     null=  0.0% uniq=     9 | min=0 max=8 mean=0.5556 | 0:4011, 4:366, 3:222, 1:214, 2:170, 5:13, 8:2, 6:1
+split                             str       null=  0.0% uniq=     1 | holdout:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+transactions / train  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+customer_id                       str       null=  0.0% uniq=  2544
+merchant_id                       str       null=  0.0% uniq=  1375
+device_id                         str       null=  1.7% uniq=  2532
+amount_paise                      int64     null=  0.0% uniq=  4968 | min=2647 max=5.5156e+08 mean=4.868e+05
+transaction_amount                float64   null=  0.0% uniq=  4968 | min=26.47 max=5.5156e+06 mean=4868
+payment_channel                   str       null=  0.0% uniq=     4 | UPI:2947, card:1544, wallet:333, net_banking:176
+merchant_category                 str       null=  0.0% uniq=    10 | grocery:883, quick_commerce:792, food:642, electronics:639, gaming:483, gift_cards:388, healthcare:345, education:314
+transaction_time                  str       null=  0.0% uniq=  5000
+customer_age                      int64     null=  0.0% uniq=    63 | min=18 max=80 mean=48.97
+customer_location                 str       null=  2.7% uniq=    16
+merchant_location                 str       null=  0.0% uniq=    16
+account_age                       int64     null=  0.0% uniq=  1033 | min=0 max=1828 mean=698
+previous_transactions             int64     null=  0.0% uniq=    26 | min=0 max=25 mean=2.771
+average_transaction_value         float64   null=  4.2% uniq=  4763 | min=44.87 max=1.37963e+06 mean=3905
+failed_transactions               int64     null=  0.0% uniq=     6 | min=0 max=5 mean=0.4434 | 0:4179, 4:290, 1:216, 3:172, 2:130, 5:13
+split                             str       null=  0.0% uniq=     1 | train:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+transactions / validation  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+customer_id                       str       null=  0.0% uniq=  2705
+merchant_id                       str       null=  0.0% uniq=  1378
+device_id                         str       null=  0.3% uniq=  2712
+amount_paise                      int64     null=  0.0% uniq=  4966 | min=2661 max=6.90741e+08 mean=5.364e+05
+transaction_amount                float64   null=  0.0% uniq=  4966 | min=26.61 max=6.90741e+06 mean=5364
+payment_channel                   str       null=  0.0% uniq=     4 | UPI:2820, card:1624, wallet:359, net_banking:197
+merchant_category                 str       null=  0.0% uniq=    10 | grocery:926, quick_commerce:717, electronics:711, food:657, gaming:498, gift_cards:344, healthcare:327, travel:318
+transaction_time                  str       null=  0.0% uniq=  5000
+customer_age                      int64     null=  0.0% uniq=    63 | min=18 max=80 mean=48.8
+customer_location                 str       null=  2.8% uniq=    16
+merchant_location                 str       null=  0.0% uniq=    16
+account_age                       int64     null=  0.0% uniq=  1201 | min=1 max=2130 mean=882.5
+previous_transactions             int64     null=  0.0% uniq=    25 | min=0 max=24 mean=4.396
+average_transaction_value         float64   null=  0.5% uniq=  4945 | min=45.18 max=696545 mean=4806
+failed_transactions               int64     null=  0.0% uniq=     9 | min=0 max=8 mean=0.472 | 0:4149, 4:307, 1:196, 3:187, 2:148, 5:6, 6:3, 8:3
+split                             str       null=  0.0% uniq=     1 | validation:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+transactions / warmup  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+customer_id                       str       null=  0.0% uniq=  2578
+merchant_id                       str       null=  0.0% uniq=  1384
+device_id                         str       null=  1.8% uniq=  2570
+amount_paise                      int64     null=  0.0% uniq=  4970 | min=2223 max=5.77186e+07 mean=3.337e+05
+transaction_amount                float64   null=  0.0% uniq=  4970 | min=22.23 max=577186 mean=3337
+payment_channel                   str       null=  0.0% uniq=     4 | UPI:2864, card:1586, wallet:336, net_banking:214
+merchant_category                 str       null=  0.0% uniq=    10 | grocery:911, electronics:725, quick_commerce:707, food:639, gaming:483, gift_cards:437, healthcare:331, travel:291
+transaction_time                  str       null=  0.0% uniq=  5000
+customer_age                      int64     null=  0.0% uniq=    63 | min=18 max=80 mean=48.95
+customer_location                 str       null=  2.7% uniq=    16
+merchant_location                 str       null=  0.0% uniq=    16
+account_age                       int64     null=  0.0% uniq=  1016 | min=9 max=1738 mean=591.6
+previous_transactions             int64     null=  0.0% uniq=    16 | min=0 max=15 mean=1.384
+average_transaction_value         float64   null= 51.6% uniq=  2412 | min=29.67 max=129687 mean=2786
+failed_transactions               int64     null=  0.0% uniq=     7 | min=0 max=6 mean=0.502 | 0:4111, 4:328, 3:202, 1:184, 2:156, 5:18, 6:1
+split                             str       null=  0.0% uniq=     1 | warmup:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+labels / holdout  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:4962, 1:38
+label_source                      str       null=  0.0% uniq=     3 | mature_no_fraud:4962, investigator_verdict:29, confirmed_chargeback:9
+label_available_at                str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | holdout:5000
+eligible_at_next_split_start      bool      null=  0.0% uniq=     1 | True:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+labels / train  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:4970, 1:30
+label_source                      str       null=  0.0% uniq=     3 | mature_no_fraud:4970, investigator_verdict:22, confirmed_chargeback:8
+label_available_at                str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | train:5000
+eligible_at_next_split_start      bool      null=  0.0% uniq=     1 | True:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+labels / validation  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:4954, 1:46
+label_source                      str       null=  0.0% uniq=     3 | mature_no_fraud:4954, investigator_verdict:32, confirmed_chargeback:14
+label_available_at                str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | validation:5000
+eligible_at_next_split_start      bool      null=  0.0% uniq=     2 | True:2903, False:2097
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+labels / warmup  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:4954, 1:46
+label_source                      str       null=  0.0% uniq=     3 | mature_no_fraud:4954, investigator_verdict:38, confirmed_chargeback:8
+label_available_at                str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | warmup:5000
+eligible_at_next_split_start      bool      null=  0.0% uniq=     1 | True:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+features / holdout  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+feature_as_of                     str       null=  0.0% uniq=  5000
+amount_to_avg_ratio               float64   null=  0.6% uniq=  4405 | min=0.0003 max=9838.47 mean=4.884
+is_new_device                     object    null=  0.3% uniq=     2 | False:4728, True:257, nan:15
+customer_merchant_distance_km     float64   null=  3.0% uniq=   121 | min=0 max=2428.81 mean=1066
+is_new_city                       object    null=  3.0% uniq=     2 | False:4576, True:274, nan:150
+hour_of_day                       int64     null=  0.0% uniq=    23 | min=0 max=23 mean=11.18
+is_night                          bool      null=  0.0% uniq=     2 | False:3910, True:1090
+has_recent_failures               bool      null=  0.0% uniq=     2 | False:4395, True:605
+is_new_account                    bool      null=  0.0% uniq=     2 | False:4953, True:47
+txn_count_last_1h                 int64     null=  0.0% uniq=    10 | min=0 max=9 mean=1.253 | 0:2798, 1:853, 2:368, 3:241, 4:240, 5:202, 6:152, 7:98
+txn_amount_last_24h_paise         int64     null=  0.0% uniq=  2325 | min=0 max=5.32402e+08 mean=7.512e+05
+distinct_customers_per_device_7d  float64   null=  0.3% uniq=     7 | min=0 max=6 mean=0.7276 | 1.0:2653, 0.0:1996, 2.0:147, 3.0:95, 4.0:80, nan:15, 5.0:9, 6.0:5
+combined_risk_flags               int64     null=  0.0% uniq=     5 | min=0 max=4 mean=1.215 | 1:3065, 2:779, 0:674, 3:476, 4:6
+mcc_target_encoded_rate           float64   null=  0.0% uniq=    10 | min=0.0001645 max=0.0265378 mean=0.00697 | 0.00029069:881, 0.01477811:729, 0.00027182:685, 0.0212833:626, 0.0002167:604, 0.02653777:375, 0.0001645:307, 0.00022516:300
+mcc_encoding_as_of                str       null=  0.0% uniq=     1 | 2025-10-31T18:30:00.000+00:00:5000
+mcc_encoding_count                int64     null=  0.0% uniq=    10 | min=28503 max=105167 mean=6.779e+04 | 105167:881, 74172:729, 86723:685, 54525:626, 76502:604, 40657:375, 33943:307, 38095:300
+missing_customer_location         bool      null=  0.0% uniq=     2 | False:4850, True:150
+missing_device                    bool      null=  0.0% uniq=     2 | False:4985, True:15
+cold_start                        bool      null=  0.0% uniq=     2 | False:4968, True:32
+reason_codes                      str       null=  0.0% uniq=    64
+feature_version                   str       null=  0.0% uniq=     1 | sentinel-features-1.0.0:5000
+========================================================================
+features / train  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+feature_as_of                     str       null=  0.0% uniq=  5000
+amount_to_avg_ratio               float64   null=  4.2% uniq=  4306 | min=0.0002 max=5686.43 mean=2.719
+is_new_device                     object    null=  1.7% uniq=     2 | False:4482, True:435, nan:83
+customer_merchant_distance_km     float64   null=  2.7% uniq=   121 | min=0 max=2428.81 mean=1048
+is_new_city                       object    null=  2.7% uniq=     2 | False:4434, True:433, nan:133
+hour_of_day                       int64     null=  0.0% uniq=    23 | min=0 max=23 mean=11.88
+is_night                          bool      null=  0.0% uniq=     2 | False:4160, True:840
+has_recent_failures               bool      null=  0.0% uniq=     2 | False:4525, True:475
+is_new_account                    bool      null=  0.0% uniq=     2 | False:4991, True:9
+txn_count_last_1h                 int64     null=  0.0% uniq=     9 | min=0 max=8 mean=1.277 | 0:2723, 1:887, 2:388, 3:255, 4:251, 5:210, 6:146, 7:94
+txn_amount_last_24h_paise         int64     null=  0.0% uniq=  2408 | min=0 max=5.5156e+08 mean=4.972e+05
+distinct_customers_per_device_7d  float64   null=  1.7% uniq=     5 | min=0 max=4 mean=0.5932 | 1.0:2587, 0.0:2191, 2.0:94, nan:83, 3.0:38, 4.0:7
+combined_risk_flags               int64     null=  0.0% uniq=     4 | min=0 max=3 mean=1.169 | 1:3062, 2:851, 0:726, 3:361
+mcc_target_encoded_rate           float64   null=  0.0% uniq=     1 | 0.006:5000
+mcc_encoding_as_of                str       null=  0.0% uniq=     1 | 2024-12-31T18:30:00.000+00:00:5000
+mcc_encoding_count                int64     null=  0.0% uniq=     1 | 0:5000
+missing_customer_location         bool      null=  0.0% uniq=     2 | False:4867, True:133
+missing_device                    bool      null=  0.0% uniq=     2 | False:4917, True:83
+cold_start                        bool      null=  0.0% uniq=     2 | False:4792, True:208
+reason_codes                      str       null=  0.0% uniq=    54
+feature_version                   str       null=  0.0% uniq=     1 | sentinel-features-1.0.0:5000
+========================================================================
+features / validation  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+feature_as_of                     str       null=  0.0% uniq=  5000
+amount_to_avg_ratio               float64   null=  0.5% uniq=  4417 | min=0.0004 max=6775.58 mean=2.841
+is_new_device                     object    null=  0.3% uniq=     2 | False:4748, True:236, nan:16
+customer_merchant_distance_km     float64   null=  2.8% uniq=   121 | min=0 max=2428.81 mean=1046
+is_new_city                       object    null=  2.8% uniq=     2 | False:4618, True:243, nan:139
+hour_of_day                       int64     null=  0.0% uniq=    23 | min=0 max=23 mean=11.62
+is_night                          bool      null=  0.0% uniq=     2 | False:4176, True:824
+has_recent_failures               bool      null=  0.0% uniq=     2 | False:4493, True:507
+is_new_account                    bool      null=  0.0% uniq=     2 | False:4962, True:38
+txn_count_last_1h                 int64     null=  0.0% uniq=     9 | min=0 max=8 mean=1.198 | 0:2851, 1:864, 2:361, 3:230, 4:227, 5:185, 6:141, 7:94
+txn_amount_last_24h_paise         int64     null=  0.0% uniq=  2326 | min=0 max=6.909e+08 mean=1.201e+06
+distinct_customers_per_device_7d  float64   null=  0.3% uniq=     8 | min=0 max=7 mean=0.7008 | 1.0:2793, 0.0:1978, 3.0:74, 2.0:66, 4.0:46, nan:16, 6.0:13, 5.0:7
+combined_risk_flags               int64     null=  0.0% uniq=     5 | min=0 max=4 mean=1.136 | 1:3235, 0:719, 2:698, 3:341, 4:7
+mcc_target_encoded_rate           float64   null=  0.0% uniq=    10 | min=0.0001645 max=0.0265378 mean=0.006217 | 0.00029069:926, 0.00027182:717, 0.01477811:711, 0.0002167:657, 0.0212833:498, 0.02653777:344, 0.00022516:327, 0.0001645:318
+mcc_encoding_as_of                str       null=  0.0% uniq=     1 | 2025-10-31T18:30:00.000+00:00:5000
+mcc_encoding_count                int64     null=  0.0% uniq=    10 | min=28503 max=105167 mean=6.852e+04 | 105167:926, 86723:717, 74172:711, 76502:657, 54525:498, 40657:344, 38095:327, 33943:318
+missing_customer_location         bool      null=  0.0% uniq=     2 | False:4861, True:139
+missing_device                    bool      null=  0.0% uniq=     2 | False:4984, True:16
+cold_start                        bool      null=  0.0% uniq=     2 | False:4976, True:24
+reason_codes                      str       null=  0.0% uniq=    71
+feature_version                   str       null=  0.0% uniq=     1 | sentinel-features-1.0.0:5000
+========================================================================
+features / warmup  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+feature_as_of                     str       null=  0.0% uniq=  5000
+amount_to_avg_ratio               float64   null= 51.6% uniq=  2318 | min=0.0334 max=98.0673 mean=2.105
+is_new_device                     object    null=  1.8% uniq=     2 | True:2580, False:2331, nan:89
+customer_merchant_distance_km     float64   null=  2.7% uniq=   121 | min=0 max=2428.81 mean=1051
+is_new_city                       object    null=  2.7% uniq=     2 | True:2560, False:2307, nan:133
+hour_of_day                       int64     null=  0.0% uniq=    23 | min=0 max=23 mean=11.9
+is_night                          bool      null=  0.0% uniq=     2 | False:4096, True:904
+has_recent_failures               bool      null=  0.0% uniq=     2 | False:4451, True:549
+is_new_account                    bool      null=  0.0% uniq=     2 | False:4928, True:72
+txn_count_last_1h                 int64     null=  0.0% uniq=     9 | min=0 max=8 mean=1.253 | 0:2751, 1:919, 2:364, 3:235, 4:234, 5:197, 6:156, 7:97
+txn_amount_last_24h_paise         int64     null=  0.0% uniq=  2316 | min=0 max=4.77842e+07 mean=4.083e+05
+distinct_customers_per_device_7d  float64   null=  1.8% uniq=     4 | min=0 max=3 mean=0.4899 | 0.0:2570, 1.0:2283, nan:89, 2.0:51, 3.0:7
+combined_risk_flags               int64     null=  0.0% uniq=     5 | min=0 max=4 mean=1.722 | 2:2693, 1:1428, 3:594, 0:282, 4:3
+mcc_target_encoded_rate           float64   null=  0.0% uniq=     1 | 0.006:5000
+mcc_encoding_as_of                str       null=  0.0% uniq=     1 | 2024-09-30T18:30:00.000+00:00:5000
+mcc_encoding_count                int64     null=  0.0% uniq=     1 | 0:5000
+missing_customer_location         bool      null=  0.0% uniq=     2 | False:4867, True:133
+missing_device                    bool      null=  0.0% uniq=     2 | False:4911, True:89
+cold_start                        bool      null=  0.0% uniq=     2 | True:2578, False:2422
+reason_codes                      str       null=  0.0% uniq=    59
+feature_version                   str       null=  0.0% uniq=     1 | sentinel-features-1.0.0:5000
+========================================================================
+payment_outcomes / holdout  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+outcome_time                      str       null=  0.0% uniq=  5000
+status                            str       null=  0.0% uniq=     2 | SUCCESS:4328, FAILED:672
+failure_code                      str       null= 86.6% uniq=     1 | nan:4328, SIMULATED_AUTH_FAILURE:672
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+payment_outcomes / train  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+outcome_time                      str       null=  0.0% uniq=  5000
+status                            str       null=  0.0% uniq=     2 | SUCCESS:4435, FAILED:565
+failure_code                      str       null= 88.7% uniq=     1 | nan:4435, SIMULATED_AUTH_FAILURE:565
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+payment_outcomes / validation  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+outcome_time                      str       null=  0.0% uniq=  5000
+status                            str       null=  0.0% uniq=     2 | SUCCESS:4416, FAILED:584
+failure_code                      str       null= 88.3% uniq=     1 | nan:4416, SIMULATED_AUTH_FAILURE:584
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+payment_outcomes / warmup  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+outcome_time                      str       null=  0.0% uniq=  5000
+status                            str       null=  0.0% uniq=     2 | SUCCESS:4371, FAILED:629
+failure_code                      str       null= 87.4% uniq=     1 | nan:4371, SIMULATED_AUTH_FAILURE:629
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+customers / all  (first part: 5000 rows, duplicate rows: 0)
+customer_id                       str       null=  0.0% uniq=  5000
+created_at                        str       null=  0.0% uniq=  1153
+customer_age                      int64     null=  0.0% uniq=    63 | min=18 max=80 mean=49.34
+home_city                         str       null=  0.0% uniq=    16
+region                            str       null=  0.0% uniq=     6 | south:1253, east:1230, north:967, west:919, northeast:325, central:306
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+merchants / all  (first part: 2000 rows, duplicate rows: 0)
+merchant_id                       str       null=  0.0% uniq=  2000
+synthetic_name                    str       null=  0.0% uniq=  2000
+merchant_category                 str       null=  0.0% uniq=    10 | grocery:200, food:200, education:200, travel:200, electronics:200, gaming:200, gift_cards:200, quick_commerce:200
+merchant_location                 str       null=  0.0% uniq=    16
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:2000
+========================================================================
+devices / all  (first part: 5000 rows, duplicate rows: 0)
+device_id                         str       null=  0.0% uniq=  5000
+device_kind                       str       null=  0.0% uniq=     2 | mobile:3750, browser:1250
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+decision_audit / holdout  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+scored_at                         str       null=  0.0% uniq=  5000
+fraud_probability                 float64   null=  0.0% uniq=  4694 | min=0.007403 max=0.817355 mean=0.07444
+decision                          str       null=  0.0% uniq=     3 | ALLOW:4882, REVIEW:80, BLOCK:38
+risk_level                        str       null=  0.0% uniq=     3 | LOW:4549, MEDIUM:369, HIGH:82
+reason_codes                      str       null=  0.0% uniq=    49
+explanation                       str       null=  0.0% uniq=    49
+decision_source                   str       null=  0.0% uniq=     2 | MODEL:4962, HARD_RULE:38
+model_version                     str       null=  0.0% uniq=     1 | SYNTHETIC-HEURISTIC-NOT-A-MODEL-v1:5000
+rules_version                     str       null=  0.0% uniq=     1 | synthetic-rules-1:5000
+latency_ms                        int64     null=  0.0% uniq=   201 | min=20 max=220 mean=119.4
+explanation_latency_ms            int64     null=  0.0% uniq=  1529 | min=28 max=1715 mean=872.4
+prompt_format                     str       null=  0.0% uniq=     1 | fmt-v1:5000
+prompt_hash                       str       null=  0.0% uniq=  5000
+request                           str       null=  0.0% uniq=  5000
+feature_vector                    str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | holdout:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+decision_audit / train  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+scored_at                         str       null=  0.0% uniq=  5000
+fraud_probability                 float64   null=  0.0% uniq=  4690 | min=0.007435 max=0.821796 mean=0.0642
+decision                          str       null=  0.0% uniq=     3 | ALLOW:4922, REVIEW:65, BLOCK:13
+risk_level                        str       null=  0.0% uniq=     3 | LOW:4663, MEDIUM:271, HIGH:66
+reason_codes                      str       null=  0.0% uniq=    46
+explanation                       str       null=  0.0% uniq=    46
+decision_source                   str       null=  0.0% uniq=     2 | MODEL:4987, HARD_RULE:13
+model_version                     str       null=  0.0% uniq=     1 | SYNTHETIC-HEURISTIC-NOT-A-MODEL-v1:5000
+rules_version                     str       null=  0.0% uniq=     1 | synthetic-rules-1:5000
+latency_ms                        int64     null=  0.0% uniq=   201 | min=20 max=220 mean=120.3
+explanation_latency_ms            int64     null=  0.0% uniq=  1550 | min=31 max=1708 mean=859.1
+prompt_format                     str       null=  0.0% uniq=     1 | fmt-v1:5000
+prompt_hash                       str       null=  0.0% uniq=  5000
+request                           str       null=  0.0% uniq=  5000
+feature_vector                    str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | train:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+decision_audit / validation  (first part: 5000 rows, duplicate rows: 0)
+transaction_id                    str       null=  0.0% uniq=  5000
+scored_at                         str       null=  0.0% uniq=  5000
+fraud_probability                 float64   null=  0.0% uniq=  4685 | min=0.007393 max=0.869303 mean=0.06348
+decision                          str       null=  0.0% uniq=     3 | ALLOW:4923, REVIEW:59, BLOCK:18
+risk_level                        str       null=  0.0% uniq=     4 | LOW:4653, MEDIUM:285, HIGH:61, CRITICAL:1
+reason_codes                      str       null=  0.0% uniq=    54
+explanation                       str       null=  0.0% uniq=    54
+decision_source                   str       null=  0.0% uniq=     2 | MODEL:4983, HARD_RULE:17
+model_version                     str       null=  0.0% uniq=     1 | SYNTHETIC-HEURISTIC-NOT-A-MODEL-v1:5000
+rules_version                     str       null=  0.0% uniq=     1 | synthetic-rules-1:5000
+latency_ms                        int64     null=  0.0% uniq=   201 | min=20 max=220 mean=119.2
+explanation_latency_ms            int64     null=  0.0% uniq=  1543 | min=26 max=1707 mean=864.6
+prompt_format                     str       null=  0.0% uniq=     1 | fmt-v1:5000
+prompt_hash                       str       null=  0.0% uniq=  5000
+request                           str       null=  0.0% uniq=  5000
+feature_vector                    str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | validation:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+reviewer_feedback / holdout  (first part: 2708 rows, duplicate rows: 0)
+feedback_id                       str       null=  0.0% uniq=  2708
+transaction_id                    str       null=  0.0% uniq=  2708
+reviewed_at                       str       null=  0.0% uniq=  2708
+verdict                           str       null=  0.0% uniq=     2 | GENUINE:2024, FRAUD:684
+corrected_explanation             str       null=  0.0% uniq=    43
+reviewer_id                       str       null=  0.0% uniq=    46
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:2708
+========================================================================
+reviewer_feedback / train  (first part: 5000 rows, duplicate rows: 0)
+feedback_id                       str       null=  0.0% uniq=  5000
+transaction_id                    str       null=  0.0% uniq=  5000
+reviewed_at                       str       null=  0.0% uniq=  5000
+verdict                           str       null=  0.0% uniq=     2 | GENUINE:3744, FRAUD:1256
+corrected_explanation             str       null=  0.0% uniq=    52
+reviewer_id                       str       null=  0.0% uniq=    46
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+reviewer_feedback / validation  (first part: 2907 rows, duplicate rows: 0)
+feedback_id                       str       null=  0.0% uniq=  2907
+transaction_id                    str       null=  0.0% uniq=  2907
+reviewed_at                       str       null=  0.0% uniq=  2907
+verdict                           str       null=  0.0% uniq=     2 | GENUINE:2141, FRAUD:766
+corrected_explanation             str       null=  0.0% uniq=    49
+reviewer_id                       str       null=  0.0% uniq=    46
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:2907
+========================================================================
+gold_explanations / holdout  (first part: 500 rows, duplicate rows: 0)
+example_id                        str       null=  0.0% uniq=   500
+transaction_id                    str       null=  0.0% uniq=   500
+split                             str       null=  0.0% uniq=     1 | holdout:500
+prompt                            str       null=  0.0% uniq=   500
+target                            str       null=  0.0% uniq=    35
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:300, 1:200
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:500
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:500
+========================================================================
+gold_explanations / train  (first part: 5000 rows, duplicate rows: 0)
+example_id                        str       null=  0.0% uniq=  5000
+transaction_id                    str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | train:5000
+prompt                            str       null=  0.0% uniq=  5000
+target                            str       null=  0.0% uniq=    56
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:3028, 1:1972
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+preference_pairs / train  (first part: 5000 rows, duplicate rows: 0)
+pair_id                           str       null=  0.0% uniq=  5000
+transaction_id                    str       null=  0.0% uniq=  5000
+split                             str       null=  0.0% uniq=     1 | train:5000
+prompt                            str       null=  0.0% uniq=  5000
+chosen                            str       null=  0.0% uniq=    55
+rejected                          str       null=  0.0% uniq=   198
+rejection_reason                  str       null=  0.0% uniq=     1 | unsupported fact absent from prompt:5000
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+documents / holdout  (first part: 3264 rows, duplicate rows: 0)
+document_id                       str       null=  0.0% uniq=  3264
+kind                              str       null=  0.0% uniq=     2 | investigator_notes:2261, chargeback_narratives:1003
+title                             str       null=  0.0% uniq=  3264
+transaction_id                    str       null=  0.0% uniq=  3015
+legacy_case_id                    float64   null=100.0% uniq=     0 | nan:3264
+split                             str       null=  0.0% uniq=     1 | holdout:3264
+published_at                      str       null=  0.0% uniq=  3015
+content                           str       null=  0.0% uniq=  3264
+content_sha256                    str       null=  0.0% uniq=  3264
+template_family                   str       null=  0.0% uniq=    36
+cpt_eligible                      bool      null=  0.0% uniq=     1 | False:3264
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:3264
+storage_path                      str       null=  0.0% uniq=     2 | sentinel-cc080dc8ffb8b9f9/corpus/investigator_notes/holdout/part-00001.jsonl.gz:2261, sentinel-cc080dc8ffb8b9f9/corpus/chargeback_narratives/holdout/part-00001.jsonl.gz:1003
+record_in_shard                   int64     null=  0.0% uniq=  2261 | min=1 max=2261 mean=937.7
+metadata                          str       null=  0.0% uniq=  3264
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:3264
+========================================================================
+documents / train  (first part: 3279 rows, duplicate rows: 0)
+document_id                       str       null=  0.0% uniq=  3279
+kind                              str       null=  0.0% uniq=     5 | investigator_notes:1774, regulatory_exercises:900, playbooks:600, guidelines:4, rba_guides:1
+title                             str       null=  0.0% uniq=  3279
+transaction_id                    float64   null=100.0% uniq=     0 | nan:3279
+legacy_case_id                    str       null= 45.9% uniq=  1774
+split                             str       null=  0.0% uniq=     1 | train:3279
+published_at                      str       null=  0.0% uniq=  1798
+content                           str       null=  0.0% uniq=  3279
+content_sha256                    str       null=  0.0% uniq=  3279
+template_family                   str       null=  0.0% uniq=   425
+cpt_eligible                      bool      null=  0.0% uniq=     1 | True:3279
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:3279
+storage_path                      str       null=  0.0% uniq=     5 | sentinel-cc080dc8ffb8b9f9/corpus/investigator_notes/train/part-00001.jsonl.gz:1774, sentinel-cc080dc8ffb8b9f9/corpus/regulatory_exercises/train/part-00001.jsonl.gz:900, sentinel-cc080dc8ffb8b9f9/corpus/playbooks/train/part-00001.jsonl.gz:600, sentinel-cc080dc8ffb8b9f9/corpus/guidelines/train/part-00001.jsonl.gz:4, sentinel-cc080dc8ffb8b9f9/corpus/rba_guides/train/part-00001.jsonl.gz:1
+record_in_shard                   int64     null=  0.0% uniq=  1774 | min=1 max=1774 mean=658.8
+metadata                          str       null=  0.0% uniq=  2094
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:3279
+========================================================================
+documents / validation  (first part: 3258 rows, duplicate rows: 0)
+document_id                       str       null=  0.0% uniq=  3258
+kind                              str       null=  0.0% uniq=     2 | investigator_notes:2272, chargeback_narratives:986
+title                             str       null=  0.0% uniq=  3258
+transaction_id                    str       null=  0.0% uniq=  2979
+legacy_case_id                    float64   null=100.0% uniq=     0 | nan:3258
+split                             str       null=  0.0% uniq=     1 | validation:3258
+published_at                      str       null=  0.0% uniq=  2979
+content                           str       null=  0.0% uniq=  3258
+content_sha256                    str       null=  0.0% uniq=  3258
+template_family                   str       null=  0.0% uniq=    40
+cpt_eligible                      bool      null=  0.0% uniq=     1 | False:3258
+review_status                     str       null=  0.0% uniq=     1 | synthetic_candidate_not_human_reviewed:3258
+storage_path                      str       null=  0.0% uniq=     2 | sentinel-cc080dc8ffb8b9f9/corpus/investigator_notes/validation/part-00001.jsonl.gz:2272, sentinel-cc080dc8ffb8b9f9/corpus/chargeback_narratives/validation/part-00001.jsonl.gz:986
+record_in_shard                   int64     null=  0.0% uniq=  2272 | min=1 max=2272 mean=941.9
+metadata                          str       null=  0.0% uniq=  3258
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:3258
+========================================================================
+document_chunks / holdout  (first part: 5000 rows, duplicate rows: 0)
+chunk_id                          str       null=  0.0% uniq=  5000
+document_id                       str       null=  0.0% uniq=  2500
+chunk_index                       int64     null=  0.0% uniq=     2 | 0:2500, 1:2500
+content                           str       null=  0.0% uniq=  2535
+word_count                        int64     null=  0.0% uniq=    36 | min=55 max=220 mean=145.4
+split                             str       null=  0.0% uniq=     1 | holdout:5000
+cpt_eligible                      bool      null=  0.0% uniq=     1 | False:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+document_chunks / train  (first part: 5000 rows, duplicate rows: 0)
+chunk_id                          str       null=  0.0% uniq=  5000
+document_id                       str       null=  0.0% uniq=  2503
+chunk_index                       int64     null=  0.0% uniq=     2 | 0:2503, 1:2497
+content                           str       null=  0.0% uniq=  2527
+word_count                        int64     null=  0.0% uniq=    19 | min=67 max=220 mean=151.7
+split                             str       null=  0.0% uniq=     1 | train:5000
+cpt_eligible                      bool      null=  0.0% uniq=     1 | True:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+document_chunks / validation  (first part: 5000 rows, duplicate rows: 0)
+chunk_id                          str       null=  0.0% uniq=  5000
+document_id                       str       null=  0.0% uniq=  2500
+chunk_index                       int64     null=  0.0% uniq=     2 | 0:2500, 1:2500
+content                           str       null=  0.0% uniq=  2534
+word_count                        int64     null=  0.0% uniq=    35 | min=55 max=220 mean=145.5
+split                             str       null=  0.0% uniq=     1 | validation:5000
+cpt_eligible                      bool      null=  0.0% uniq=     1 | False:5000
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:5000
+========================================================================
+legacy_cases / all  (first part: 2000 rows, duplicate rows: 0)
+legacy_case_id                    str       null=  0.0% uniq=  2000
+customer_id                       str       null=  0.0% uniq=  2000
+transaction_time                  str       null=  0.0% uniq=   964
+closed_at                         str       null=  0.0% uniq=   964
+amount_paise                      int64     null=  0.0% uniq=  1999 | min=5949 max=2.9984e+06 mean=1.465e+06
+payment_channel                   str       null=  0.0% uniq=     4 | UPI:500, card:500, wallet:500, net_banking:500
+fraud_label                       int64     null=  0.0% uniq=     2 | 0:1465, 1:535
+evidence                          str       null=  0.0% uniq=     2 | {"reason_codes":["R05_AMOUNT_SPIKE","R01_NEW_DEVICE"],"source":"synthetic_archived_snapshot","history_not_reconstructed":true}:1333, {"reason_codes":[],"source":"synthetic_archived_snapshot","history_not_reconstructed":true}:667
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:2000
+========================================================================
+list_entries / all  (first part: 137 rows, duplicate rows: 0)
+entry_id                          str       null=  0.0% uniq=   137
+list_type                         str       null=  0.0% uniq=     2 | allowlisted_customers:125, blocked_devices:12
+entity_id                         str       null=  0.0% uniq=   137
+effective_from                    str       null=  0.0% uniq=     1 | 2024-12-31T18:30:00.000+00:00:137
+reason                            str       null=  0.0% uniq=     1 | fictional seeded policy fixture:137
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:137
+========================================================================
+hard_rules / all  (first part: 2 rows, duplicate rows: 0)
+rule_id                           str       null=  0.0% uniq=     2 | HR_BLOCKLIST_DEVICE:1, HR_ALLOWLIST_CUSTOMER:1
+code                              str       null=  0.0% uniq=     2 | HR_BLOCKLIST_DEVICE:1, HR_ALLOWLIST_CUSTOMER:1
+expression                        str       null=  0.0% uniq=     2 | {"field":"device_id","operator":"in_list","list":"blocked_devices"}:1, {"field":"customer_id","operator":"in_list","list":"allowlisted_customers"}:1
+action                            str       null=  0.0% uniq=     2 | BLOCK:1, CAP_AT_REVIEW:1
+priority                          int64     null=  0.0% uniq=     2 | 100:1, 10:1
+enabled                           bool      null=  0.0% uniq=     1 | True:2
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:2
+========================================================================
+threshold_sets / all  (first part: 1 rows, duplicate rows: 0)
+threshold_id                      str       null=  0.0% uniq=     1 | THR_DEFAULT_V1:1
+version                           int64     null=  0.0% uniq=     1 | 1:1
+mcc_group                         float64   null=100.0% uniq=     0 | nan:1
+medium_from                       float64   null=  0.0% uniq=     1 | 0.3:1
+high_from                         float64   null=  0.0% uniq=     1 | 0.6:1
+critical_from                     float64   null=  0.0% uniq=     1 | 0.85:1
+status                            str       null=  0.0% uniq=     1 | active_synthetic:1
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:1
+========================================================================
+config_changes / all  (first part: 1 rows, duplicate rows: 0)
+change_id                         str       null=  0.0% uniq=     1 | CHANGE_0001:1
+entity                            str       null=  0.0% uniq=     1 | threshold_sets:1
+entity_id                         str       null=  0.0% uniq=     1 | THR_DEFAULT_V1:1
+before_value                      float64   null=100.0% uniq=     0 | nan:1
+after_value                       str       null=  0.0% uniq=     1 | {"medium":0.3,"high":0.6,"critical":0.85}:1
+changed_by                        str       null=  0.0% uniq=     1 | SYNTHETIC_ADMIN:1
+changed_at                        str       null=  0.0% uniq=     1 | 2024-12-31T18:30:00.000+00:00:1
+reason                            str       null=  0.0% uniq=     1 | Initial CRD teaching thresholds:1
+is_synthetic                      bool      null=  0.0% uniq=     1 | True:1

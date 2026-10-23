@@ -1,0 +1,112 @@
+
+==========================================================================
+A. Counts declared in manifest.json
+==========================================================================
+  transactions               1,000,000
+  warmup                       100,000
+  customers                     25,000
+  merchants                      2,000
+  investigator_notes            25,834
+  chargeback_narratives         11,667
+  playbooks                        600
+  regulatory_exercises             900
+  gold                           8,000
+  dpo                            5,000
+  evaluation                       500
+  legacy_cases                   2,000
+  fraud_rate declared: 0.006    label_snapshot: 2026-05-01T00:00:00+05:30
+
+==========================================================================
+B. Rows per table and split, added up from manifest.json
+==========================================================================
+  table                      train  validation     holdout      warmup         all
+  config_changes                 -           -           -           -           1
+  customers                      -           -           -           -      25,000
+  decision_audit           714,745     144,803     140,452           -           -
+  devices                        -           -           -           -     100,120
+  document_chunks           61,753       8,438       7,816           -           -
+  documents                 30,879       4,219       3,908           -           -
+  features                 714,745     144,803     140,452     100,000           -
+  gold_explanations          8,000           -         500           -           -
+  hard_rules                     -           -           -           -           2
+  labels                   714,745     144,803     140,452     100,000           -
+  legacy_cases                   -           -           -           -       2,000
+  list_entries                   -           -           -           -         137
+  merchants                      -           -           -           -       2,000
+  payment_outcomes         714,745     144,803     140,452     100,000           -
+  preference_pairs           5,000           -           -           -           -
+  reviewer_feedback         13,761       2,907       2,708           -           -
+  threshold_sets                 -           -           -           -           1
+  transactions             714,745     144,803     140,452     100,000           -
+
+  transactions: train + validation + holdout = 1,000,000   warm-up = 100,000
+
+==========================================================================
+C. Columns, primary keys, foreign keys from data_dictionary.json
+==========================================================================
+  customers            6 columns | PK: customer_id | FK: none
+  merchants            5 columns | PK: merchant_id | FK: none
+  devices              3 columns | PK: device_id | FK: none
+  transactions        18 columns | PK: transaction_id | FK: customer_id -> customers.customer_id; merchant_id -> merchants.merchant_id; device_id -> devices.device_id
+  payment_outcomes     5 columns | PK: transaction_id | FK: transaction_id -> transactions.transaction_id
+  labels               7 columns | PK: transaction_id | FK: transaction_id -> transactions.transaction_id
+  features            22 columns | PK: transaction_id | FK: transaction_id -> transactions.transaction_id
+  legacy_cases         9 columns | PK: legacy_case_id | FK: customer_id -> customers.customer_id
+  documents           16 columns | PK: document_id | FK: transaction_id -> transactions.transaction_id; legacy_case_id -> legacy_cases.legacy_case_id
+  document_chunks      8 columns | PK: chunk_id | FK: document_id -> documents.document_id
+  gold_explanations    8 columns | PK: example_id | FK: transaction_id -> transactions.transaction_id
+  preference_pairs     9 columns | PK: pair_id | FK: transaction_id -> transactions.transaction_id
+  decision_audit      18 columns | PK: transaction_id | FK: transaction_id -> transactions.transaction_id
+  threshold_sets       8 columns | PK: threshold_id | FK: none
+  hard_rules           7 columns | PK: rule_id | FK: none
+  list_entries         6 columns | PK: entry_id | FK: none
+  config_changes       9 columns | PK: change_id | FK: none
+  reviewer_feedback    7 columns | PK: feedback_id | FK: transaction_id -> transactions.transaction_id
+
+  total columns: 171
+
+==========================================================================
+D. Sample checks: first part-file of each split (5,000 rows each)
+==========================================================================
+  transactions    missing location  missing device  missing avg value  duplicates  max amount Rs
+  train                       2.7%            1.7%               4.2%           0      5,515,595
+  validation                  2.8%            0.3%               0.5%           0      6,907,405
+  holdout                     3.0%            0.3%               0.6%           0      5,321,104
+  warmup                      2.7%            1.8%              51.6%           0        577,186
+
+  payment channel share (train sample): UPI 59%, card 31%, wallet 7%, net_banking 4%
+  failed_transactions counts (validation sample): 0:4149, 1:196, 2:148, 3:187, 4:307, 5:6, 6:3, 7:1, 8:3
+
+  labels          fraud rows      of   fraud %
+  train                   30   5,000     0.60%
+  validation              46   5,000     0.92%
+  holdout                 38   5,000     0.76%
+  warmup                  46   5,000     0.92%
+
+==========================================================================
+E. Files and size per folder (leaves out facts_tables)
+==========================================================================
+  DATA_CARD.md                                1 files       0.0 MB
+  New Microsoft Excel Worksheet.xlsx          1 files       0.0 MB
+  corpus                                     18 files       6.8 MB
+  data_dictionary.json                        1 files       0.0 MB
+  documents                               1,525 files       2.8 MB
+  evaluation                                  1 files       0.1 MB
+  feature_catalogue.json                      1 files       0.0 MB
+  folder_peek.py                              1 files       0.0 MB
+  ground_truth                               44 files       3.8 MB
+  histories                                 256 files     236.5 MB
+  manifest.json                               1 files       0.9 MB
+  parquet                                    45 files      45.2 MB
+  quality_report.json                         1 files       0.0 MB
+  quick_profile.py                            1 files       0.0 MB
+  reason code.docx                            1 files       0.0 MB
+  reference_sources.json                      1 files       0.0 MB
+  requirements_coverage.json                  1 files       0.0 MB
+  rules_config.json                           1 files       0.0 MB
+  show_numbers.py                             1 files       0.0 MB
+  sql                                         4 files       0.0 MB
+  tables                                  1,170 files     322.6 MB
+  training                                  214 files     133.6 MB
+
+  TOTAL 3,290 files, 752 MB
